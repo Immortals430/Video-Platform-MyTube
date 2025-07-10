@@ -1,0 +1,96 @@
+@use "../../app/scss/partials" as *;
+
+nav {
+  @include display($jc: space-between, $ai: center);
+  padding: 0 20px;
+  color: $font;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background-color: $dark;
+}
+
+.nav-left-sec {
+  @include display($jc: center, $ai: center);
+}
+
+.nav-middle-sec {
+  flex: 1;
+  max-width: 40%;
+  form {
+    @include display($jc: center, $ai: center, $g: 2px);
+    width: 100%;
+    input {
+      padding: 6px 15px;
+      width: inherit;
+      border-radius: 20px 0 0 20px;
+      background-color: transparent;
+      border: 2px solid $grey;
+      color: $font;
+      &:focus {
+        border: none;
+      }
+    }
+    div {
+      background-color: $grey;
+      padding: 5px 15px;
+      border-radius: 0 20px 20px 0;
+      cursor: pointer;
+    }
+    svg {
+      font-size: 20px;
+      color: $font;
+    }
+  }
+}
+
+.nav-right-sec {
+  @include display(flex, center, center, 20px);
+
+  .create-btn {
+    background-color: $grey;
+    padding: 7px 10px;
+    border-radius: 20px;
+    @include display(flex, center, center, 2px);
+    cursor: pointer;
+  }
+
+  .user-logo {
+    @include icon();
+    cursor: pointer;
+
+    svg {
+      width: 90%;
+      height: 90%;
+    }
+  }
+}
+
+.search-icon-m {
+  display: none;
+  div {
+    border-radius: 50%;
+    cursor: pointer;
+  }
+  svg {
+    font-size: 25px;
+    color: $font;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .nav-left-sec {
+    .hamburger-menu {
+      display: none;
+    }
+  }
+  .nav-middle-sec {
+    display: none;
+  }
+  .nav-right-sec {
+    display: none;
+  }
+  .search-icon-m {
+    display: block;
+  }
+}

@@ -1,0 +1,27 @@
+@use "../../app/scss/partials" as *;
+
+.aside {
+    @include display($fd: column, $g: 2px);
+    width: 75px;
+    overflow-y: auto;
+    background-color: $dark;
+    padding: 15px 0;
+    // @include scrollbar($w: 8px);
+
+    svg {
+      font-size: x-large;
+    }
+
+    > * {
+      display: block;
+      padding: 10px 0;
+      text-align: center;
+      color: $font;
+      text-decoration: none;
+  
+      &:hover {
+        background-color: $grey;
+        cursor: pointer;
+      }
+    }
+  }

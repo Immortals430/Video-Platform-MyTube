@@ -1,0 +1,38 @@
+@use "../../../app/scss/partials" as *;
+
+.drawer {
+  position: absolute;
+  top: 50px;
+  width: 240px;
+  height: calc(100dvh - 50px);
+  overflow-y: auto;
+  transition: left 0.3s ease-in;
+  left: -260px;
+  background-color: $dark;
+  @include scrollbar($w: 8px);
+}
+
+.drawer.active {
+  left: 0;
+}
+
+.drawer-sec {
+  @include display($d: flex, $fd: column, $g: 5px);
+  padding: 15px 0;
+  border-bottom: 1px solid darkgrey;
+
+  svg {
+    font-size: x-large;
+  }
+
+  > * {
+    @include display($d: flex, $ai: center, $g: 10px);
+    padding: 5px 20px;
+    margin-right: 2px;
+
+    &:hover {
+      background-color: $grey;
+      cursor: pointer;
+    }
+  }
+}
