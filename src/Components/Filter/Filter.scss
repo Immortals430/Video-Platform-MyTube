@@ -1,0 +1,18 @@
+@use "../../scss/partials" as *;
+
+.filter{
+    padding: 20px 30px;
+    overflow-x: auto;
+    scrollbar-width: none;
+    position: sticky;
+    top: 0;
+    background-color: $dark;
+    @include display($g: 25px);
+
+    div{
+        padding: 10px 15px;
+        background-color: $grey;
+        border-radius: 20px;
+        cursor: pointer;
+    }
+}

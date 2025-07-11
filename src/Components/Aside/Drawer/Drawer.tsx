@@ -3,7 +3,7 @@ import React, { useContext } from "react";
 
 import { AiFillPlaySquare, AiOutlineHome, AiOutlineLike } from "react-icons/ai";
 import {
-    MdOutlinePlaylistPlay,
+  MdOutlinePlaylistPlay,
   MdOutlineExplore,
   MdOutlineVideoLibrary,
   MdOutlineSubscriptions,
@@ -12,6 +12,7 @@ import {
 import { FaHistory } from "react-icons/fa";
 import { SiYoutubeshorts } from "react-icons/si";
 import { AppContext } from "@/ContextAPI/AppContext";
+import Link from "next/link";
 import "./Drawer.scss";
 
 export default function Drawer() {
@@ -20,24 +21,18 @@ export default function Drawer() {
   return (
     <aside className={`${toggleDrawer && "active"} drawer`}>
       <div className="drawer-sec">
-        <div style={{ backgroundColor: "darkgrey" }}>
+        <Link href="/" style={{ backgroundColor: "darkgrey" }}>
           <div>
             <AiOutlineHome />
           </div>
           <div>Home</div>
-        </div>
+        </Link>
         {/* <div>
-          <div>
-            <MdOutlineExplore />
-          </div>
-          <div>Explore</div>
-        </div> */}
-        <div>
           <div>
             <SiYoutubeshorts />
           </div>
           <div>Shorts</div>
-        </div>
+        </div> */}
         <div>
           <div>
             <MdOutlineSubscriptions />
@@ -46,36 +41,36 @@ export default function Drawer() {
         </div>
       </div>
       <div className="drawer-sec">
-        <div>
+        <Link href="/playlist">
           <div>
             <MdOutlinePlaylistPlay />
           </div>
           <div>Playlist</div>
-        </div>
-        <div>
+        </Link>
+        <Link href="/history">
           <div>
             <FaHistory />
           </div>
           <div>History</div>
-        </div>
-        <div>
+        </Link>
+        <Link href="/channel">
           <div>
             <AiFillPlaySquare />
           </div>
           <div>Your Videos</div>
-        </div>
-        <div>
+        </Link>
+        <Link href="/watch-later">
           <div>
             <MdOutlineWatchLater />
           </div>
           <div>Watch Later</div>
-        </div>
-        <div>
+        </Link>
+        <Link href="/likes">
           <div>
             <AiOutlineLike />
           </div>
           <div>Liked Videos</div>
-        </div>
+        </Link>
       </div>
       <div className="drawer-sec">
         <h3>Your Subscriptions</h3>

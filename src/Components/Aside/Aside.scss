@@ -1,4 +1,4 @@
-@use "../../app/scss/partials" as *;
+@use "../../scss/partials" as *;
 
 .aside {
     @include display($fd: column, $g: 2px);
@@ -6,7 +6,7 @@
     overflow-y: auto;
     background-color: $dark;
     padding: 15px 0;
-    // @include scrollbar($w: 8px);
+    @include scrollbar($w: 8px);
 
     svg {
       font-size: x-large;

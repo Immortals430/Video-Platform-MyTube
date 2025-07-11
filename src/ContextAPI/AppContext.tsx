@@ -10,7 +10,7 @@ export const AppContext = createContext<AppContextType>({
 });
 
 function AppProvider({ children } : { children : ReactNode}) {
-  const [toggleDrawer, setToggleDrawer] = useState<boolean>(true);
+  const [toggleDrawer, setToggleDrawer] = useState<boolean>(false);
   return (
   <AppContext.Provider value = {{toggleDrawer, setToggleDrawer}}>
     {children}

@@ -1,0 +1,11 @@
+@use "../scss/partials" as *;
+
+.homepage {
+  display: flex;
+
+  > section {
+    overflow-y: scroll;
+    @include scrollbar();
+    flex: 1;
+  }
+}

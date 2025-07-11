@@ -1,11 +1,11 @@
-@use "../../../app/scss/partials" as *;
+@use "../../../scss/partials" as *;
 
 .drawer {
   position: absolute;
   top: 50px;
   width: 240px;
   height: calc(100dvh - 50px);
-  overflow-y: auto;
+  overflow-y: scroll;
   transition: left 0.3s ease-in;
   left: -260px;
   background-color: $dark;

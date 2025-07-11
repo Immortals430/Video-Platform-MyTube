@@ -1,4 +1,4 @@
-@use "../../app/scss/partials" as *;
+@use "../../scss/partials" as *;
 
 nav {
   @include display($jc: space-between, $ai: center);
