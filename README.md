@@ -2,4 +2,4 @@
 
 ## Getting Started
 
-Aside Menu, Filters and Video Page added in Homepage
+added video player, recommendation and comment in video page

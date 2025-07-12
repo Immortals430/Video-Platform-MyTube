@@ -1,0 +1,41 @@
+@use "../../scss//partials" as *;
+
+.recommendation-sec{
+    @include display($fd: column, $g: 10px);
+
+    >div{
+        @include display($g: 10px);
+    }
+
+    .thumb{
+        width: 45%;
+        img{
+            @include image();
+        }
+    }
+
+    .details{
+        flex: 1;
+        @include display($fd: column, $g: 2px)
+    }
+
+    .title {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        line-clamp: 2;
+        overflow: hidden;
+      }
+
+      .channel {
+        color: lightgrey;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        line-clamp: 1;
+        overflow: hidden;
+      }
+      .views {
+        color: lightgrey;
+      }
+}

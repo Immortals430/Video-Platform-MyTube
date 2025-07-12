@@ -3,16 +3,16 @@ import "./Videos.scss";
 
 export default function Videos() {
   return (
-    <div className="grid">
+    <section className="videos-sec">
       {Array.from({ length: 16 }).map((elem, i) => (
         <Link href="/video/1" key={i}>
-          <div className="video-card">
+          <div className="card">
             <img src="./thumb.jpg" alt="thumb" />
-            <div className="video-detail-cont">
+            <div className="details-container">
               <div className="channel-logo">
                 <img src="./thumb.jpg" alt="logo" />
               </div>
-              <div className="video-detail">
+              <div className="details">
                 <h4 className="title">
                   WWE Wrestlemania 28-Triple H vs Undertaker full match Lorem
                   ipsum dolor sit amet consectetur adipisicing elit.
@@ -25,6 +25,6 @@ export default function Videos() {
           </div>
         </Link>
       ))}
-    </div>
+    </section>
   );
 }

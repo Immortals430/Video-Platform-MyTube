@@ -3,9 +3,9 @@
 .homepage {
   display: flex;
 
-  > section {
+  > div {
     overflow-y: scroll;
-    @include scrollbar();
+    @include scrollbar($w: 8px);
     flex: 1;
   }
 }

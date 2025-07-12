@@ -3,7 +3,7 @@ import "./Filter.scss";
 
 export default function Filter() {
   return (
-    <div className="filter">
+    <section className="filter-sec">
         <Link href="" >
       <div>All</div>
       </Link>
@@ -42,6 +42,6 @@ export default function Filter() {
       <div>Node</div>
       <div>Express</div>
       <div>MongoDB</div>
-    </div>
+    </section>
   );
 }

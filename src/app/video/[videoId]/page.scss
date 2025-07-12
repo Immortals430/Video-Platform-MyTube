@@ -1,0 +1,21 @@
+@use "../../../scss/partials" as *;
+
+.video-player {
+  overflow-y: scroll;
+  padding: 30px 5vw;
+  @include scrollbar();
+  margin: auto;
+
+  > div {
+    @include display($g: 20px);
+  }
+
+  .left-sec {
+    flex: 1;
+  }
+
+  .right-sec {
+    flex-shrink: 1;
+    width: 25%;
+  }
+}
