@@ -8,7 +8,7 @@ export default function Recommendation() {
       {Array.from({ length: 6 }).map((elem, i) => (
         <div key={i}>
           <div className="thumb">
-            <img src="/thumb.jpg" alt="thumb" />
+            <img src="/thumb.jpg" alt="thumb"  />
           </div>
           <div className="details">
             <h4 className="title">

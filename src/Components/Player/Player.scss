@@ -15,13 +15,14 @@
   margin: 12px 0;
 
   .flex {
-    @include display($d: flex, $jc: space-between);
+    @include display($jc: space-between);
     padding: 10px 0;
   }
   .channel-desc {
-    @include display($d: flex, $jc: space-between, $ai: center, $g: 10px);
+    @include display($jc: space-between, $ai: center, $g: 10px);
 
     .channel-logo {
+      position: relative;
       @include icon();
     }
 
@@ -38,7 +39,7 @@
   }
 
   .options {
-    @include display($d: flex, $ai: center, $g: 20px);
+    @include display($ai: center, $g: 20px);
     >div{
         padding: 8px 10px; 
         background-color: $grey;

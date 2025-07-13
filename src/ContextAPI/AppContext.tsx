@@ -1,5 +1,5 @@
 'use client'
-import { createContext, Dispatch, ReactNode } from "react";
+import { createContext, ReactNode } from "react";
 import { useState } from "react";
 import { AppContextType } from "@/types/appContext";
 

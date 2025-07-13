@@ -1,4 +1,5 @@
 
+import Image from "next/image";
 import "./Player.scss";
 
 export default function Player() {
@@ -14,7 +15,7 @@ export default function Player() {
         <div className="flex">
           <div className="channel-desc">
             <div className="channel-logo">
-              <img src="/thumb.jpg" alt="logo" />
+              <Image src="/thumb.jpg" alt="logo" fill />
             </div>
             <div className="channel-detail">
               <p>WWE</p>

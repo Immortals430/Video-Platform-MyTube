@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 import "./Videos.scss";
 
 export default function Videos() {
@@ -7,10 +8,14 @@ export default function Videos() {
       {Array.from({ length: 16 }).map((elem, i) => (
         <Link href="/video/1" key={i}>
           <div className="card">
-            <img src="./thumb.jpg" alt="thumb" />
+
+            <div className="thumb-container">
+              <Image src="/thumb.jpg" alt="thumb" fill   />
+            </div>
+       
             <div className="details-container">
               <div className="channel-logo">
-                <img src="./thumb.jpg" alt="logo" />
+                <Image src="/thumb.jpg" alt="logo" fill/>
               </div>
               <div className="details">
                 <h4 className="title">
@@ -22,6 +27,7 @@ export default function Videos() {
                 <p className="views">6.3 crore views</p>
               </div>
             </div>
+            
           </div>
         </Link>
       ))}

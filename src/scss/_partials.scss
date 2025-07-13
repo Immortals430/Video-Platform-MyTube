@@ -57,10 +57,13 @@ $theme: #d62422;
   .card {
     overflow: hidden;
     cursor: pointer;
-    img {
-      width: 100%;
+
+    .thumb-container{
       aspect-ratio: 16/9;
-      // object-fit: cover;
+      position: relative;
+    }
+    img {
+      @include image();
       border-radius: 10px;
     }
 
@@ -79,10 +82,11 @@ $theme: #d62422;
 
       .channel-logo {
         @include icon(25px);
-        // display: -webkit-box;
-        // -webkit-box-orient: vertical;
-        // -webkit-line-clamp: 1;
-        // line-clamp: 1;
+        position: relative;
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 1;
+        line-clamp: 1;
         overflow: hidden;
       }
 

@@ -1,7 +1,7 @@
 @use "../../../scss/partials" as *;
 
 .drawer {
-  position: absolute;
+  position: fixed;
   top: 50px;
   width: 240px;
   height: calc(100dvh - 50px);
@@ -10,6 +10,7 @@
   left: -260px;
   background-color: $dark;
   @include scrollbar($w: 8px);
+  z-index: 100;
 }
 
 .drawer.active {
@@ -17,7 +18,7 @@
 }
 
 .drawer-sec {
-  @include display($d: flex, $fd: column, $g: 5px);
+  @include display($fd: column, $g: 5px);
   padding: 15px 0;
   border-bottom: 1px solid darkgrey;
 
@@ -26,7 +27,7 @@
   }
 
   > * {
-    @include display($d: flex, $ai: center, $g: 10px);
+    @include display($ai: center, $g: 10px);
     padding: 5px 20px;
     margin-right: 2px;
 

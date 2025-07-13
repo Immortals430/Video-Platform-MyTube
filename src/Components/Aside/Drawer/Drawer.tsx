@@ -4,13 +4,13 @@ import React, { useContext } from "react";
 import { AiFillPlaySquare, AiOutlineHome, AiOutlineLike } from "react-icons/ai";
 import {
   MdOutlinePlaylistPlay,
-  MdOutlineExplore,
-  MdOutlineVideoLibrary,
+  // MdOutlineExplore,
+  // MdOutlineVideoLibrary,
   MdOutlineSubscriptions,
   MdOutlineWatchLater,
 } from "react-icons/md";
 import { FaHistory } from "react-icons/fa";
-import { SiYoutubeshorts } from "react-icons/si";
+// import { SiYoutubeshorts } from "react-icons/si";
 import { AppContext } from "@/ContextAPI/AppContext";
 import Link from "next/link";
 import "./Drawer.scss";

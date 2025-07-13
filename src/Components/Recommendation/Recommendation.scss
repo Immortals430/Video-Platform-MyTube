@@ -9,6 +9,8 @@
 
     .thumb{
         width: 45%;
+        aspect-ratio: 16 / 9;
+        position: relative;
         img{
             @include image();
         }

@@ -10,14 +10,14 @@
 }
 
 .comment {
-  @include display($d: flex, $g: 20px);
+  @include display($g: 20px);
 
   .input {
     flex: 1;
     align-self: center;
   }
   form {
-    @include display($d: flex, $g: 10px);
+    @include display($g: 10px);
   }
   input {
     width: 100%;
@@ -40,10 +40,10 @@
 
 .comment-list {
   margin-top: 30px;
-  @include display($d: flex, $g: 20px);
+  @include display($g: 20px);
 
   .user-comment {
-    @include display($d: flex, $fd: column, $g: 8px);
+    @include display($fd: column, $g: 8px);
     flex: 1;
   }
 
@@ -59,13 +59,13 @@
   }
 
   .translate{
-    @include display($d: flex, $g: 10px);
+    @include display($g: 10px);
     color: gray;
     cursor: pointer ;
   }
 
   .like-dislike{
-    @include display($d: flex, $g: 10px);
+    @include display($g: 10px);
     > *{
       cursor: pointer;
     }
