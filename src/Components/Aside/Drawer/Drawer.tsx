@@ -16,12 +16,16 @@ import Link from "next/link";
 import "./Drawer.scss";
 
 export default function Drawer() {
-  const { toggleDrawer } = useContext(AppContext);
+  const { toggleDrawer, setToggleDrawer } = useContext(AppContext);
 
   return (
     <aside className={`${toggleDrawer && "active"} drawer`}>
       <div className="drawer-sec">
-        <Link href="/" style={{ backgroundColor: "darkgrey" }}>
+        <Link
+          href="/"
+          style={{ backgroundColor: "darkgrey" }}
+          onClick={() => setToggleDrawer(false)}
+        >
           <div>
             <AiOutlineHome />
           </div>
@@ -41,31 +45,31 @@ export default function Drawer() {
         </div>
       </div>
       <div className="drawer-sec">
-        <Link href="/playlist">
+        <Link href="/playlist" onClick={() => setToggleDrawer(false)}>
           <div>
             <MdOutlinePlaylistPlay />
           </div>
           <div>Playlist</div>
         </Link>
-        <Link href="/history">
+        <Link href="/history" onClick={() => setToggleDrawer(false)}>
           <div>
             <FaHistory />
           </div>
           <div>History</div>
         </Link>
-        <Link href="/channel">
+        <Link href="/channel" onClick={() => setToggleDrawer(false)}>
           <div>
             <AiFillPlaySquare />
           </div>
           <div>Your Videos</div>
         </Link>
-        <Link href="/watch-later">
+        <Link href="/watch-later" onClick={() => setToggleDrawer(false)}>
           <div>
             <MdOutlineWatchLater />
           </div>
           <div>Watch Later</div>
         </Link>
-        <Link href="/likes">
+        <Link href="/likes" onClick={() => setToggleDrawer(false)}>
           <div>
             <AiOutlineLike />
           </div>

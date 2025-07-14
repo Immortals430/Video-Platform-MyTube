@@ -1,0 +1,32 @@
+@use "../../../scss/partials" as *;
+
+.history-right-sec {
+  @include display($fd: column, $g: 20px);
+  width: fit-content;
+  top: 0;
+  margin: auto;
+
+  > div {
+    @include display($g: 10px);
+    cursor: pointer;
+  }
+
+  input {
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid $font;
+    padding: 8px 0 8px 20px;
+    outline: none;
+    color: $font;
+  }
+
+  .searchbar {
+    position: relative;
+  }
+
+  .search-icon {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+}

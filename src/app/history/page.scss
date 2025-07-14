@@ -1,6 +1,39 @@
+@use "../../scss/partials" as *;
+
 .historypage {
-    display: flex;
-    >div{
-        flex: 1;
+  @include display($jc: center);
+  > div {
+    position: relative;
+    @include display($g: 16px);
+    flex: 1;
+    overflow-y: scroll;
+    padding: 20px 0 20px 50px;
+    @include scrollbar($w: 8px);
+  }
+
+  .videos-container {
+    width: 60%;
+    min-width: 400px;
+  }
+
+  .right-sec-container {
+    position: sticky;
+    top: 0;
+    flex: 1;
+    padding: 50px 0 0 20px;
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .historypage {
+    > div {
+      padding: 20px 30px;
     }
+    .videos-container {
+      width: 100%;
+    }
+    .right-sec-container {
+      display: none;
+    }
+  }
 }

@@ -48,6 +48,14 @@ $theme: #d62422;
   }
 }
 
+@mixin lineClamp($lines: 1) {
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: $lines;
+  line-clamp: $lines;
+  overflow: hidden;
+}
+
 @mixin grid() {
   display: grid;
   gap: min(100%, 10px);
@@ -58,7 +66,7 @@ $theme: #d62422;
     overflow: hidden;
     cursor: pointer;
 
-    .thumb-container{
+    .thumb-container {
       aspect-ratio: 16/9;
       position: relative;
     }
