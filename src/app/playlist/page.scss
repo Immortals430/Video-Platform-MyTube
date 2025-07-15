@@ -1,10 +1,9 @@
-@use "../scss/partials" as *;
+@use "../../scss/partials" as *;
 
-.homepage {
+.playlistpage {
   display: flex;
-
   > div {
-    padding: 0 30px;
+    padding: 0 50px;
     overflow-y: scroll;
     @include scrollbar($w: 8px);
     flex: 1;

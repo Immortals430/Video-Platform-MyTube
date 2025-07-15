@@ -1,0 +1,53 @@
+@use "../../scss/partials" as *;
+
+.playlist-sec {
+  h1 {
+    padding: 20px 0;
+  }
+  .playlist {
+    @include grid();
+  }
+
+  .playlist-thumb::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: black;
+    opacity: 0;
+    z-index: 10;
+    transition: opacity 0.3s ease;
+  }
+
+  .playlist-thumb:after {
+    content: "Play all";
+    @include display($jc: center, $ai: center);
+    color: $font;
+    z-index: 20;
+    position: absolute;
+    inset: 0;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+
+  .playlist-card:hover .playlist-thumb::before {
+    opacity: 0.7;
+  }
+
+  .playlist-card:hover .playlist-thumb::after {
+    opacity: 1;
+  }
+
+  .total-videos {
+    position: absolute;
+    z-index: 30;
+    right: 10px;
+    bottom: 8px;
+    background-color: black;
+    padding: 2px;
+    @include display($jc: center, $ai: center, $g: 2px);
+    font-size: x-small;
+  }
+}

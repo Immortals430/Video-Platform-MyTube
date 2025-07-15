@@ -1,6 +1,6 @@
 @use "../../../scss/partials" as *;
 
-.video-player {
+.video-player-page {
   overflow-y: scroll;
   padding: 30px 5vw;
   @include scrollbar();
