@@ -32,7 +32,7 @@ export default function Aside() {
         </div>
         <div>Liked Videos</div>
       </Link>
-      <Link href="/library">
+      <Link href="/playlist">
         <div>
           <MdOutlineVideoLibrary />
         </div>

@@ -1,0 +1,67 @@
+@use "../../../scss/partials" as *;
+
+.playlsitvideos-header {
+  @include display($fd: column, $g: 20px);
+  width: 33%;
+
+  h1{
+    margin-bottom: 10px;
+  }
+
+  p{
+    margin-bottom: 15px;
+    @include lineClamp($lines: 3)
+  }
+
+  .thumbnail {
+    aspect-ratio: 16 / 9;
+    border-radius: 10px;
+    overflow: hidden;
+    position: relative;
+
+    img {
+      @include image();
+    }
+  }
+
+  .buttons-container{
+    @include display($g: 10px, $fw: wrap);
+
+    div{
+      padding: 10px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+    }
+
+    .play-btn{
+      background-color: $grey;
+       font-weight: bold;
+    }
+
+    .delete-btn{
+      background-color: $theme;
+      color: black;
+      font-weight: bold;
+    }
+  }
+}
+
+
+
+@media only screen and (max-width: 768px){
+  .playlsitvideos-header {
+    width: 100%;
+
+    flex-flow: row wrap;
+
+      .thumbnail {
+        min-width: 300px;
+        width: 100%;
+      }
+
+      .playlist-details{
+        flex: 1;
+        min-width: 270px;
+      }
+  }
+}

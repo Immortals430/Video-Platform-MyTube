@@ -3,7 +3,6 @@ import { FaPlus } from "react-icons/fa6";
 import { HiOutlineUserCircle } from "react-icons/hi2";
 import Link from "next/link";
 import HamburgerMenu from "./HamburgerMenu";
-import Image from "next/image";
 import "./Navbar.scss";
 
 export default function Navbar() {

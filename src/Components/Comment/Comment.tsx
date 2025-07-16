@@ -1,4 +1,4 @@
-'use client'
+"use client";
 import React, { useState } from "react";
 import { AiOutlineLike } from "react-icons/ai";
 import { AiOutlineDislike } from "react-icons/ai";
@@ -7,7 +7,7 @@ import "./Comment.scss";
 export default function Comment() {
   const [translatedText, setTranslatedText] = useState("");
 
-  const translateText = async (e, text = "elephant") => {
+  const translateText = async (e: React.ChangeEvent, text = "elephant") => {
     const url = `https://api.mymemory.translated.net/get?q=${text}&langpair=en|${e.target.value}`;
 
     try {

@@ -9,12 +9,13 @@
     cursor: pointer;
     font-size: 22px;
   }
+
+
   .history-videos {
     margin-top: 20px;
 
     .video-card {
-      display: flex;
-      gap: 20px;
+      @include display($g: 20px);
       margin-bottom: 20px;
     }
 
@@ -53,6 +54,14 @@
       .detail {
         color: lightgrey;
         @include lineClamp($lines: 3);
+      }
+    }
+
+    .delete{
+      padding-top: 5px;
+      font-size: 22px;
+      svg{
+        cursor: pointer;
       }
     }
   }

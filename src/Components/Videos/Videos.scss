@@ -1,5 +1,6 @@
 @use "../../scss/partials" as *;
 
 .videos-sec{
+  padding-top: 10px;
   @include grid()
 }

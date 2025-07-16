@@ -1,5 +1,6 @@
 import Image from "next/image";
 import { IoMdSettings } from "react-icons/io";
+import { RxCross2 } from "react-icons/rx";
 import "./HistoryVideos.scss";
 
 export default function HistoryVideos() {
@@ -20,8 +21,7 @@ export default function HistoryVideos() {
             <div className="video-detail-cont">
               <h3 className="title">
                 Video name Lorem ipsum dolor sit amet consectetur adipisicing
-                elit. Sequi corporis veritatis dolore mollitia tenetur repellat
-                quisquam eum laudantium, delectus quibusdam.
+
               </h3>
               <div className="views">
                 <span className="channel-name">Channel Name</span>
@@ -29,9 +29,11 @@ export default function HistoryVideos() {
               </div>
 
               <p className="detail">
-                Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-                Exercitationem, saepe in similique vitae aliquam sequi enim id
+                Lorem ipsum dolor sit, 
               </p>
+            </div>
+            <div className="delete">
+              <RxCross2 />
             </div>
           </div>
         ))}

@@ -1,0 +1,22 @@
+@use "../../../scss/partials" as *;
+
+.playlist-videos-page {
+  display: flex;
+  > div {
+    @include display($g: 40px);
+    padding: 20px 50px;
+    overflow-y: scroll;
+    @include scrollbar($w: 8px);
+    flex: 1;
+  }
+}
+
+
+@media only screen and (max-width: 1024px){
+  .playlist-videos-page{
+    padding: 20px;
+    >div{
+      flex-flow: column;
+    }
+  }
+}
