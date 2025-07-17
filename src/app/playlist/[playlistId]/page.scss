@@ -12,11 +12,22 @@
 }
 
 
+
 @media only screen and (max-width: 1024px){
   .playlist-videos-page{
     padding: 20px;
     >div{
+      padding: 20px 20px;
       flex-flow: column;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px){
+  .playlist-videos-page{
+    padding: 0;
+    >div{
+          padding: 10px 5px 0 5px;
     }
   }
 }

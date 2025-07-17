@@ -11,7 +11,7 @@
   .thumb-container {
     position: relative;
     aspect-ratio: 16 / 8;
-    max-width: 300px;
+    max-width: 220px;
     border-radius: 10px;
     overflow: hidden;
     width: 100%;
@@ -25,21 +25,19 @@
     min-width: 50%;
     flex: 1;
     padding: 5px 0;
+
     .title {
       @include lineClamp($lines: 2);
       margin-bottom: 5px;
     }
-
     .views {
       @include display($fw: wrap);
       color: lightgrey;
       margin-bottom: 5px;
     }
-
     .channel-name {
       margin-right: 20px;
     }
-
     .detail {
       color: lightgrey;
       @include lineClamp($lines: 3);
@@ -51,6 +49,17 @@
     font-size: 22px;
     svg {
       cursor: pointer;
+    }
+  }
+}
+
+@media only screen and (max-width: 768px) {
+  .history-sec {
+    .video-card {
+      gap: 10px;
+    }
+    .thumb-container {
+      width: clamp(100px, 100%, 200px);
     }
   }
 }

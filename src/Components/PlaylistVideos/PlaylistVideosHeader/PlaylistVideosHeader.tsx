@@ -6,11 +6,11 @@ import "./PlaylistVideosHeader.scss";
 export default function PlaylistVideosHeader() {
   return (
     <section className="playlsitvideos-header">
-      <div>
+   
         <div className="thumbnail">
           <Image src="/thumb.jpg" alt="" fill />
         </div>
-      </div>
+      
 
       <div className="playlist-details">
           <h1>Playlist Name</h1>
