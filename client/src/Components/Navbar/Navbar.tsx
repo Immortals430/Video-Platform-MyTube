@@ -1,8 +1,8 @@
 import { IoSearch } from "react-icons/io5";
-import { FaPlus } from "react-icons/fa6";
 import { HiOutlineUserCircle } from "react-icons/hi2";
 import Link from "next/link";
-import HamburgerMenu from "./HamburgerMenu";
+import HamburgerMenu from "./ClientComponents/HamburgerMenu";
+import NavCreateVideoButton from "./ClientComponents/NavCreateVideoButton";
 import "./Navbar.scss";
 
 export default function Navbar() {
@@ -23,20 +23,12 @@ export default function Navbar() {
       <div className="nav-middle-sec">
         <form>
           <input type="text" />
-          <div>
-            <IoSearch />
-          </div>
+          <div><IoSearch /></div>
         </form>
       </div>
 
       <div className="nav-right-sec">
-        <div
-          className="create-btn"
-          // onClick={() => setUploadVideo(true)}
-        >
-          <FaPlus />
-          <span>Create</span>
-        </div>
+        <NavCreateVideoButton />
 
         <div className="user-logo">
           <HiOutlineUserCircle />
