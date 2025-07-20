@@ -1,9 +1,11 @@
+
 import { IoSearch } from "react-icons/io5";
-import { HiOutlineUserCircle } from "react-icons/hi2";
 import Link from "next/link";
 import HamburgerMenu from "./ClientComponents/HamburgerMenu";
 import NavCreateVideoButton from "./ClientComponents/NavCreateVideoButton";
+import NavAccountButton from "./ClientComponents/NavAccountButton";
 import "./Navbar.scss";
+import { GoogleOAuthProvider } from "@react-oauth/google";
 
 export default function Navbar() {
   return (
@@ -23,17 +25,19 @@ export default function Navbar() {
       <div className="nav-middle-sec">
         <form>
           <input type="text" />
-          <div><IoSearch /></div>
+          <div>
+            <IoSearch />
+          </div>
         </form>
       </div>
 
       <div className="nav-right-sec">
         <NavCreateVideoButton />
-
-        <div className="user-logo">
-          <HiOutlineUserCircle />
-          {/* <img src="/logo.avif" alt="user-logo" /> */}
-        </div>
+        <GoogleOAuthProvider
+          clientId={process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID || ""}
+        >
+          <NavAccountButton />
+        </GoogleOAuthProvider>
       </div>
 
       <div className="search-icon-m">

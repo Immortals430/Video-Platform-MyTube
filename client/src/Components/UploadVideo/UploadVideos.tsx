@@ -8,7 +8,7 @@ import "./UploadVideos.scss";
 
 export default function UploadVideos() {
   const [uploadStatus, setuploadStatus] = useState<string>("none");
-  const { setUploadVideoPage } = useContext(AppContext);
+  const { setToggleVideoUpload } = useContext(AppContext);
 
   const upload = (e: React.FormEvent) => {
     e.preventDefault();
@@ -25,7 +25,7 @@ export default function UploadVideos() {
           <h1>Upload Videos</h1>
           <RxCross2
             className="close-btn"
-            onClick={() => setUploadVideoPage(false)}
+            onClick={() => setToggleVideoUpload(false)}
           />
         </div>
         <div className="status">

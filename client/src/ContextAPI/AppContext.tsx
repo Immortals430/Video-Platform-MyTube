@@ -3,22 +3,28 @@ import { createContext, ReactNode } from "react";
 import { useState } from "react";
 import { AppContextType } from "@/types/appContext";
 import UploadVideos from "@/Components/UploadVideo/UploadVideos";
+import Login from "@/Components/Login/Login";
 
 function AppProvider({ children }: { children: ReactNode }) {
   const [toggleDrawer, setToggleDrawer] = useState<boolean>(false);
-  const [uploadVideoPage, setUploadVideoPage] = useState<boolean>(false);
+  const [toggleVideoUpload, setToggleVideoUpload] = useState<boolean>(false);
+  const [toggleLoginSection, setToggleLoginSection] = useState<boolean>(false);
+
 
   return (
     <AppContext.Provider
       value={{
         toggleDrawer,
         setToggleDrawer,
-        uploadVideoPage,
-        setUploadVideoPage,
+        toggleVideoUpload,
+        setToggleVideoUpload,
+        toggleLoginSection,
+        setToggleLoginSection
       }}
     >
       {children}
-      {uploadVideoPage && <UploadVideos />}
+      {toggleVideoUpload && <UploadVideos />}
+      {toggleLoginSection && <Login />}
     </AppContext.Provider>
   );
 }
@@ -28,6 +34,8 @@ export default AppProvider;
 export const AppContext = createContext<AppContextType>({
   toggleDrawer: false,
   setToggleDrawer: () => {},
-  uploadVideoPage: false,
-  setUploadVideoPage: () => {},
+  toggleVideoUpload: false,
+  setToggleVideoUpload: () => {},
+  toggleLoginSection: false,
+  setToggleLoginSection: () => {},
 });
