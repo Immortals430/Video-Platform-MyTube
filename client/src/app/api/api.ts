@@ -1,9 +1,8 @@
 import axios from "axios";
 
 const API = axios.create({
-  baseURL: "http://localhost:3000/api/v1",
-  withCredentials: true,
-})
+  baseURL: process.env.NEXT_PUBLIC_API_URL || "http://localhost:8000/api/v1",
+});
 
-
-const login = () => API.post("/user/login")
+export const authenticateAPI = (token: string) =>
+  API.post("/user/login", {}, { headers: { "Authorization": token }});

@@ -2,9 +2,17 @@ import { NextFunction, Request, Response } from "express";
 import { google } from "googleapis";
 const people = google.people("v1");
 
+declare global {
+  namespace Express {
+    interface Request {
+      user: any;
+    }
+  }
+}
+
 async function verifyToken(req: Request, res: Response, next: NextFunction) {
   const token = req.headers["authorization"];
-
+  console.log(req.header)
   try {
     const oauth2Client = new google.auth.OAuth2();
     oauth2Client.setCredentials({ access_token: token });

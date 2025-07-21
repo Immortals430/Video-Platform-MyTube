@@ -12,7 +12,7 @@ const errorhandler = (err: ErrorRequestHandler, req : Request, res : Response, n
     if(err instanceof ApplicationError){
         return res.status(err.code).json({ message: err.message})
     }
-
+    console.log(err)
     res.status(500).json({ message: "Something went wrong" })
 }
 

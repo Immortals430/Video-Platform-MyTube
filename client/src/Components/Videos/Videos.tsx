@@ -6,13 +6,13 @@ import axios from "axios";
 export default async function Videos() {
   try {
     let videos = await axios.get(
-      "http://localhost:8000/api/v1/get-home-videos"
+      "http://localhost:8000/api/v1/video/get-home-videos"
     );
     let videoList = videos.data.data;
 
     return (
       <section className="videos-sec">
-        {videoList.map((_, i: number) => (
+        {Array.from({ length: 8 }).map((_, i: number) => (
           <Link href="/video/1" key={i}>
             <div className="card">
               <div className="thumb-container">

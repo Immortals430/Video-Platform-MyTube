@@ -4,6 +4,8 @@ import { useState } from "react";
 import { AppContextType } from "@/types/appContext";
 import UploadVideos from "@/Components/UploadVideo/UploadVideos";
 import Login from "@/Components/Login/Login";
+import { Provider } from "react-redux";
+import { store } from "@/redux/store";
 
 function AppProvider({ children }: { children: ReactNode }) {
   const [toggleDrawer, setToggleDrawer] = useState<boolean>(false);
@@ -12,6 +14,7 @@ function AppProvider({ children }: { children: ReactNode }) {
 
 
   return (
+    <Provider store={store}>
     <AppContext.Provider
       value={{
         toggleDrawer,
@@ -26,6 +29,7 @@ function AppProvider({ children }: { children: ReactNode }) {
       {toggleVideoUpload && <UploadVideos />}
       {toggleLoginSection && <Login />}
     </AppContext.Provider>
+    </Provider>
   );
 }
 

@@ -20,8 +20,8 @@ export default function RootLayout({
         <AppProvider>
           <Navbar />
           <Drawer />
+          <div className="container">{children}</div>
         </AppProvider>
-        <div className="container">{children}</div>
       </body>
     </html>
   );
