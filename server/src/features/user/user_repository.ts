@@ -12,7 +12,7 @@ export default class UserRepository {
     return user;
   }
 
-  async findUser(email: string) {
-    return await User.findOne({ email });
+  async findUser(obj: { email?: string, _id?: string }) {
+    return await User.findOne(obj);
   }
 }

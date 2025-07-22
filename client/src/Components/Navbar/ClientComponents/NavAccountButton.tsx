@@ -12,7 +12,7 @@ import { useSelector } from "react-redux";
 export default function NavAccountButton() {
   const dispatch = useAppDispatch();
   const { loggedUser } = useSelector(userSelector);
-
+ 
   const login = useGoogleLogin({
     onSuccess: ({ access_token }) => {
       dispatch(handleAuthentication(access_token));

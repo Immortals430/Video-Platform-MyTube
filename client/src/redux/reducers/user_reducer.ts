@@ -1,5 +1,7 @@
 import { authenticateAPI } from "@/app/api/api";
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
+import Cookie from "js-cookie"
+const projectName = process.env.NEXT_PUBLIC_PROJECT_NAME || "MyTube"
 
 
 let initialState = {
@@ -22,7 +24,7 @@ export const handleAuthentication = createAsyncThunk(
     try {
       const {data} = await authenticateAPI(token);
       dispatch(ADD_LOGGEDUSER(data.data))
-
+      Cookie.set(projectName, data.token, { expires: 15 })
     } catch (err) {
       console.log(err);
     }

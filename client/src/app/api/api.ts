@@ -5,4 +5,9 @@ const API = axios.create({
 });
 
 export const authenticateAPI = (token: string) =>
-  API.post("/user/login", {}, { headers: { "Authorization": token }});
+  API.post("/user/authenticate", {}, { headers: { "Authorization": token }});
+
+
+export const fetchLoggedUserAPI = (token : string) => 
+  API.get(`/user/get-login-status/${token}`)
+

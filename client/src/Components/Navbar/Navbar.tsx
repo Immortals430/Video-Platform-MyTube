@@ -1,13 +1,13 @@
-
 import { IoSearch } from "react-icons/io5";
 import Link from "next/link";
 import HamburgerMenu from "./ClientComponents/HamburgerMenu";
 import NavCreateVideoButton from "./ClientComponents/NavCreateVideoButton";
 import NavAccountButton from "./ClientComponents/NavAccountButton";
-import "./Navbar.scss";
 import { GoogleOAuthProvider } from "@react-oauth/google";
+import "./Navbar.scss";
 
-export default function Navbar() {
+export default async function Navbar() {
+
   return (
     <nav>
       <div className="nav-left-sec">

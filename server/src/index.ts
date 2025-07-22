@@ -9,15 +9,14 @@ import errorhandler from "./middlwares/errorhandler.js";
 import videoRoutes from "./features/video/video_routes.js";
 import userRoutes from "./features/user/user_routes.js";
 
-console.log(process.env.CLIENT)
+
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: process.env.CLIENT_URL,
     credentials: true,
     methods: "GET,OPTIONS,PATCH,DELETE,POST,PUT",
     allowedHeaders:
       "X-CSRF-Token, X-Requested-With, Accept, Content-Type, Authorization",
-    
   })
 );
 
