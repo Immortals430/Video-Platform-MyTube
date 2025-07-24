@@ -32,6 +32,11 @@ nav {
         border: none;
       }
     }
+    button{
+      display: inline;
+      background-color: transparent;
+      border: none;
+    }
     div {
       background-color: $grey;
       padding: 5px 15px;

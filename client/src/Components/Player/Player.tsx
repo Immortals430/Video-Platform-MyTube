@@ -3,6 +3,7 @@ import Image from "next/image";
 import "./Player.scss";
 
 export default function Player() {
+
   return (
     <section>
       <div className="player">

@@ -24,7 +24,7 @@ export const handleAuthentication = createAsyncThunk(
     try {
       const {data} = await authenticateAPI(token);
       dispatch(ADD_LOGGEDUSER(data.data))
-      Cookie.set(projectName, data.token, { expires: 15 })
+      Cookie.set(projectName, data.token, { expires: 2 })
     } catch (err) {
       console.log(err);
     }

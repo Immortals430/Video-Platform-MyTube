@@ -4,10 +4,10 @@ import HamburgerMenu from "./ClientComponents/HamburgerMenu";
 import NavCreateVideoButton from "./ClientComponents/NavCreateVideoButton";
 import NavAccountButton from "./ClientComponents/NavAccountButton";
 import { GoogleOAuthProvider } from "@react-oauth/google";
+import NavSearchBar from "./ClientComponents/NavSearchBar";
 import "./Navbar.scss";
 
 export default async function Navbar() {
-
   return (
     <nav>
       <div className="nav-left-sec">
@@ -23,12 +23,7 @@ export default async function Navbar() {
       </div>
 
       <div className="nav-middle-sec">
-        <form>
-          <input type="text" />
-          <div>
-            <IoSearch />
-          </div>
-        </form>
+        <NavSearchBar />
       </div>
 
       <div className="nav-right-sec">

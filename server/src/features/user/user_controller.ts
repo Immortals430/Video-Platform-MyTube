@@ -1,9 +1,10 @@
 import { NextFunction, Request, Response } from "express";
-import { generatePassword } from "../../utils/passwordGenerator.js";
+import { generatePassword } from "../../utils/password_generator.js";
 import UserRepository from "./user_repository.js";
 import { generateJwtToken } from "../../utils/jwt_sign.js";
 import jwt from "jsonwebtoken";
 import { ApplicationError } from "../../middlwares/errorhandler.js";
+const projectName = process.env.PROJECT_NAME || "MyTube"
 
 export default class UserController {
   userRepository;
@@ -26,13 +27,19 @@ export default class UserController {
       }
       const token = generateJwtToken({ id: user.id, email: user.email });
 
-      res.status(201).json({
-        success: true,
-        data: user,
-        token: token,
-
-        message: "authenticated successfully",
-      });
+      res
+        .status(201)
+        .cookie(projectName, token, {
+          secure: true,
+          sameSite: "none",
+          expires: new Date(Date.now() + 2 * 24 * 60 * 60 * 1000), // 2 days from current date
+        })
+        .json({
+          success: true,
+          data: user,
+          token: token,
+          message: "authenticated successfully",
+        });
     } catch (err) {
       next(err);
     }
@@ -47,7 +54,7 @@ export default class UserController {
         throw new ApplicationError("Invalid token payload", 401);
       }
       const userData = await this.userRepository.findUser({ _id: payload.id });
-      if(!userData) throw new ApplicationError("User not found", 404)
+      if (!userData) throw new ApplicationError("User not found", 404);
 
       res.status(200).json({
         message: "Logged in user data",

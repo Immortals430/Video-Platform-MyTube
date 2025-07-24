@@ -7,5 +7,5 @@ interface Payload {
 }
 
 export const generateJwtToken = (payload: Payload) => {
-  return jwt.sign(payload, jwtSecret, { expiresIn: "15 days" });
+  return jwt.sign(payload, jwtSecret, { expiresIn: "2 days" });
 };

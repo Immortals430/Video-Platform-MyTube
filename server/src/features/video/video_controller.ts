@@ -1,5 +1,7 @@
 import { NextFunction, Request, Response } from "express";
 import VideoRepository from "./video_repository.js";
+import { fetchYoutubeVideos } from "../../utils/fetch_youtube_data.js";
+
 
 export default class VideoController {
   videoRepository;
@@ -19,6 +21,22 @@ export default class VideoController {
         data: videos,
         message: "Videos fetched successfully",
       });
+    } catch (err) {
+      next(err);
+    }
+  }
+
+  async getVideoSuggestion(req: Request, res: Response, next: NextFunction) {
+    const searchQuery = req.params.searchQuery;
+    try {
+      const response = await fetchYoutubeVideos(searchQuery);
+
+      res.status(200).json({
+        success: true,
+        data: response,
+        message: "Videos fetched successfully",
+      });
+
     } catch (err) {
       next(err);
     }
