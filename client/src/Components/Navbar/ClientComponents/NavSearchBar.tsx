@@ -17,7 +17,7 @@ export default function NavSearchBar() {
 
     if (!query) return;
     dispatch(handleSearchVideo(query));
-    router.push("/video/1");
+    router.push(`/search-result/${query}`);
   };
 
   return (

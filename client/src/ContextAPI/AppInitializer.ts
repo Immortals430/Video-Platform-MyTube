@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch } from "react-redux";
 import Cookies from "js-cookie";
-import { fetchLoggedUserAPI } from "@/app/api/api";
+import { fetchLoggedUserAPI } from "@/api/api";
 import { ADD_LOGGEDUSER } from "@/redux/reducers/user_reducer";
 
 export const AppInitializer = () => {
@@ -13,10 +13,9 @@ export const AppInitializer = () => {
       if (cookie) {
         try {
           const response = await fetchLoggedUserAPI(cookie);
-            dispatch(ADD_LOGGEDUSER(response.data.data));
-            
+          dispatch(ADD_LOGGEDUSER(response.data.data));
         } catch (error) {
-          console.log(error)
+          console.log(error);
         }
       }
     };

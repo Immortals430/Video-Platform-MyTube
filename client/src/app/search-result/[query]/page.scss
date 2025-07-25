@@ -1,0 +1,11 @@
+@use "../../../scss/partials" as *;
+
+.searchresultpage {
+  display: flex;
+  > div {
+    padding: 0 50px;
+    overflow-y: scroll;
+    @include scrollbar($w: 8px);
+    flex: 1;
+  }
+}
